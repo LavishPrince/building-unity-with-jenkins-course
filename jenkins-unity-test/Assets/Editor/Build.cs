@@ -26,17 +26,6 @@ public class BuildScript
         // Start the build process
         BuildReport report = BuildPipeline.BuildPlayer(buildPlayerOptions);
 
-        // Handle the result of the build process
-        BuildSummary summary = report.summary;
-
-        if (summary.result == BuildResult.Succeeded)
-        {
-            Debug.Log($"Build succeeded: {summary.totalSize / (1024 * 1024)} MB");
-        }
-        else if (summary.result == BuildResult.Failed)
-        {
-            Debug.LogError("Build failed!");
-        }
     }
 
     private static string[] GetScenes()
