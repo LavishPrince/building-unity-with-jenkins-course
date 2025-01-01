@@ -1,6 +1,8 @@
 using UnityEditor;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
+using System.IO.Compression;
+using System.IO;
 
 public class BuildScript
 {
@@ -38,6 +40,7 @@ public class BuildScript
         {
             Debug.LogError("Build failed!");
         }
+        ZipBuild("Builds/Windows");
     }
 
     private static string[] GetScenes()
@@ -50,6 +53,16 @@ public class BuildScript
             scenes[i] = EditorBuildSettings.scenes[i].path;
         }
         return scenes;
+    }
+
+    private static void ZipBuild(string buildPath)
+    {
+        string zipPath = buildPath + ".zip";
+        if (File.Exists(zipPath))
+        {
+            File.Delete(zipPath);
+        }
+        ZipFile.CreateFromDirectory(buildPath, zipPath);
     }
 }
 
