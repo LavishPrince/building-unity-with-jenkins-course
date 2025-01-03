@@ -118,6 +118,23 @@ public class BuildScript
 
     }
 
+    public static void BuildIOS()
+    {
+        string path = "Builds/iOS";
+        CreateDirectory(path);
+        PlayerSettings.iOS.buildNumber = Environment.GetEnvironmentVariable("1");
+
+        BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
+        {
+            scenes = GetEnabledScenes(),
+            locationPathName = path,
+            target = BuildTarget.iOS,
+            options = BuildOptions.None
+        };
+
+        BuildPipeline.BuildPlayer(buildPlayerOptions);
+    }
+
     private static string GetArgument(string[] args, string name)
     {
         for (int i = 0; i < args.Length; i++)
