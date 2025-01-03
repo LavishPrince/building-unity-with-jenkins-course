@@ -121,8 +121,8 @@ public class BuildScript
     public static void BuildIOS()
     {
         string path = "Builds/iOS";
-        CreateDirectory(path);
-        PlayerSettings.iOS.buildNumber = Environment.GetEnvironmentVariable("1");
+        System.IO.Directory.CreateDirectory(Path.GetDirectoryName(path));
+        PlayerSettings.iOS.buildNumber = "1";
 
         BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
         {
