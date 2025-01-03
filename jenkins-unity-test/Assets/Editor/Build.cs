@@ -126,7 +126,7 @@ public class BuildScript
 
         BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
         {
-            scenes = GetEnabledScenes(),
+            scenes = GetScenes(),
             locationPathName = path,
             target = BuildTarget.iOS,
             options = BuildOptions.None
