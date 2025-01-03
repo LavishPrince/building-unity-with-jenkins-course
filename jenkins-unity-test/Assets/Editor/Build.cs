@@ -107,6 +107,10 @@ public class BuildScript
         PlayerSettings.Android.targetSdkVersion = (AndroidSdkVersions)34;
         PlayerSettings.Android.useAPKExpansionFiles = buildType == "AAB";
         PlayerSettings.Android.useCustomKeystore = false;
+        // PlayerSettings.Android.keystoreName = Environment.GetEnvironmentVariable("TEST_PROJECT_KEYSTORE_FILE");
+        // PlayerSettings.Android.keystorePass = Environment.GetEnvironmentVariable("KEYSTORE_PASS");
+        // PlayerSettings.Android.keyaliasName = Environment.GetEnvironmentVariable("ALIAS_NAME");
+        // PlayerSettings.Android.keyaliasPass = Environment.GetEnvironmentVariable("ALIAS_PASS");
         EditorUserBuildSettings.buildAppBundle = buildType == "AAB";
 
         // Start the build process
