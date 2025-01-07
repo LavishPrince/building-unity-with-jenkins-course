@@ -24,7 +24,7 @@ public class BuildScript
             scenes = scenes,
             locationPathName = buildPath,
             target = BuildTarget.StandaloneWindows64,
-            options = BuildOptions.CompressWithLz4
+            options = BuildOptions.CompressWithLz4HC
         };
 
         // Start the build process
